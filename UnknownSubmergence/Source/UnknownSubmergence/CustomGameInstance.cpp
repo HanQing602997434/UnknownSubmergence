@@ -64,7 +64,7 @@ void UCustomGameInstance::OnScreenshotCapturedInternal(int32 Width, int32 Height
 
 }
 
-void UCustomGameInstance::TakeScreenShot(const FString fineName /*= FString(TEXT("ScreenShot"))*/, EImageFormatType _format /*= EImageFormatType::PNG*/,
+FString UCustomGameInstance::TakeScreenShot(const FString fineName /*= FString(TEXT("ScreenShot"))*/, EImageFormatType _format /*= EImageFormatType::PNG*/,
 	int32 _quality /*= 100*/, bool bInsertTimeStampToFileName /*= true*/, bool bInShowUI /*= true*/, bool bAddFilenameSuffix /*= true*/)
 {
 	FString filename = fineName;
@@ -84,6 +84,7 @@ void UCustomGameInstance::TakeScreenShot(const FString fineName /*= FString(TEXT
 	}
 
 	fileName = FPaths::ProjectSavedDir() + "ScreenShots/WindowsNoEditor/" + filename;
+	// fileName = FPaths::ProjectSavedDir() + "ScreenShots/Windows/" + filename;
 
 	if (!UGameViewportClient::OnScreenshotCaptured().IsBound())
 	{
@@ -94,7 +95,7 @@ void UCustomGameInstance::TakeScreenShot(const FString fineName /*= FString(TEXT
 		//GEngine->GameViewport->Exec(nullptr, TEXT("HighResShot 2560x1280"), *GLog);
 	}
 
-
+	return filename;
 }
 
 TArray<FString> UCustomGameInstance::ReturnWOpenFlies()

@@ -32,7 +32,7 @@ public:
 	static void OnScreenshotCapturedInternal(int32 Width, int32 Height, const TArray<FColor>& Bitmap);
 
 	UFUNCTION(BlueprintCallable, meta = (AdvancedDisplay = "1"), Category = "TalkCameraDebug")
-		void TakeScreenShot(const FString fineName = FString(TEXT("ScreenShot")), EImageFormatType _format = EImageFormatType::PNG, int32 _quality = 100, bool bInsertTimeStampToFileName = false, bool bInShowUI = false, bool bAddFilenameSuffix = false);
+		FString TakeScreenShot(const FString fineName = FString(TEXT("ScreenShot")), EImageFormatType _format = EImageFormatType::PNG, int32 _quality = 100, bool bInsertTimeStampToFileName = false, bool bInShowUI = false, bool bAddFilenameSuffix = false);
 
 	UFUNCTION(BlueprintCallable, Category = "OpenFlie")
 		TArray<FString> ReturnWOpenFlies();
