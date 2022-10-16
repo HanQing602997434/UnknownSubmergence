@@ -84,7 +84,7 @@ FString UCustomGameInstance::TakeScreenShot(const FString fineName /*= FString(T
 	}
 
 	fileName = FPaths::ProjectSavedDir() + "ScreenShots/WindowsNoEditor/" + filename;
-	// fileName = FPaths::ProjectSavedDir() + "ScreenShots/Windows/" + filename;
+	//fileName = FPaths::ProjectSavedDir() + "ScreenShots/Windows/" + filename;
 
 	if (!UGameViewportClient::OnScreenshotCaptured().IsBound())
 	{
